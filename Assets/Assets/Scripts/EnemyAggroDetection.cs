@@ -10,7 +10,9 @@ public class EnemyAggroDetection : MonoBehaviour
     public float enemySpeed;
     private void Awake()
     {
+       
         anim = GetComponentInChildren<Animator>();
+       
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -17,8 +17,8 @@ public class GunController : MonoBehaviour
     PlayerController player;
     public Text timeText;
     public Text scoreText;
-    //public GameObject BulletPrefab;
-    
+    [SerializeField] ParticleSystem Healthparticle;
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +65,7 @@ public class GunController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
         {
+            Healthparticle.Play();
                 //var bulletProjectile = Instantiate(BulletPrefab, transform.position, Quaternion.identity);
                 var health = hit.collider.gameObject.GetComponent<EnemyHealth>();
                 if (health != null)
